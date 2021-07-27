@@ -1,19 +1,19 @@
 {% set author = "nschloe" %}
 {% set name = "meshzoo" %}
-{% set version = "0.7.3" %}
+{% set version = "0.7.4" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/{{ author }}/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: bdd8a34097de52cbd68864a365ad7df86663ea5453acfd814c04eb9cb2424a0a
+  url: https://github.com/{{ author }}/{{ name }}/archive/{{ version }}.tar.gz
+  sha256: cb537943c7f897b737b7c7f5960ffca65789d595ff88fc92c5dc70da94574ee9
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -39,7 +39,7 @@ test:
   commands:
     - "python -c \"from pathlib import Path; Path('matplotlibrc').write_text('backend: Template')\""
     - pip check
-    - pytest --codeblocks README.md 
+    - pytest --codeblocks README.md
     - pytest -s tests
 
 about:
@@ -47,7 +47,7 @@ about:
   license: GPL-3.0-only
   license_family: GPL
   license_file: LICENSE.txt
-  summary: 'Collection of explicitly constructed meshes'
+  summary: Collection of explicitly constructed meshes
   description: |
     When generating meshes for FEM/FVM computations, sometimes your geometry is so simple that you don't need a complex mesh generator (like pygmsh, MeshPy, mshr, pygalmesh, dmsh), but something simple and fast that makes use of the structure of the domain. Enter meshzoo.
   doc_url: https://github.com/nschloe/meshzoo
