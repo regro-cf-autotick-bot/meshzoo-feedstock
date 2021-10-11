@@ -32,7 +32,6 @@ test:
     - pytest
     - pytest-codeblocks
     - pytest-cov
-    - pytest-randomly
     - matplotlib-base
   source_files:
     - README.md
