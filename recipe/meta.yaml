@@ -1,6 +1,6 @@
 {% set author = "nschloe" %}
 {% set name = "meshzoo" %}
-{% set version = "0.8.0" %}
+{% set version = "0.9.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/{{ author }}/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 25fb3c208cf88212e99aaaa5b2040ca03c753c5d5f383e6bbf5b36573a8ed74c
+  sha256: 53798e97645cd864eb1ff25ca7f28fb22a3cb763130260a6e4ddb89cdcc51b6a
 
 build:
   noarch: python
