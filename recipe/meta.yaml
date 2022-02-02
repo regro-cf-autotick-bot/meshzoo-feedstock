@@ -17,15 +17,15 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.7
     - flit-core >=3.2,<4
     - pip
     - importlib_metadata
-    - numpy
+    - numpy >= 1.20.0
   run:
-    - python >=3.6
+    - python >=3.7
+    - numpy >= 1.20.0
     - importlib_metadata
-    - numpy
 
 test:
   imports:
