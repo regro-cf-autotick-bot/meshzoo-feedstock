@@ -12,18 +12,18 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - flit-core >=3.2,<4
     - pip
     - importlib_metadata
     - numpy >=1.20.0
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - numpy >=1.20.0
     - importlib_metadata
 
@@ -36,6 +36,7 @@ test:
     - pytest-codeblocks
     - pytest-cov
     - matplotlib-base
+    - python {{ python_min }}
   source_files:
     - README.md
     - tests
